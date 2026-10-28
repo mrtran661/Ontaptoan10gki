@@ -1,0 +1,6 @@
+{
+  "name": "Luyện Đề Toán 10 - Ôn Thi Giữa Học Kì 1",
+  "description": "Hệ thống ôn tập và tạo đề tương tự Giữa Học Kì 1 môn Toán 10 theo cấu trúc mới (Trắc nghiệm 4 lựa chọn, Đúng/Sai, Trả lời ngắn và Tự luận điền khuyết các bước giải) kèm chấm điểm và lời giải chi tiết.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
