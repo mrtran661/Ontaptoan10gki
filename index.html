@@ -16,6 +16,34 @@
   <body>
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
+    <script>
+      (function () {
+        function loadStaticBundle() {
+          if (window.__STATIC_BUNDLE_LOADED__) return;
+          window.__STATIC_BUNDLE_LOADED__ = true;
+          var link = document.createElement('link');
+          link.rel = 'stylesheet';
+          link.href = './static-build/app.css';
+          document.head.appendChild(link);
+          var s = document.createElement('script');
+          s.type = 'module';
+          s.src = './static-build/app.js';
+          document.body.appendChild(s);
+        }
+        if (window.location.hostname.endsWith('github.io')) {
+          loadStaticBundle();
+        } else {
+          window.addEventListener('load', function () {
+            setTimeout(function () {
+              var root = document.getElementById('root');
+              if (root && root.children.length === 0) {
+                loadStaticBundle();
+              }
+            }, 600);
+          });
+        }
+      })();
+    </script>
   </body>
 </html>
 

@@ -156,24 +156,35 @@ export const MatrixModal: React.FC<MatrixModalProps> = ({
             </div>
           ) : (
             <div className="flex flex-col h-[68vh] gap-3">
-              <div className="flex items-center justify-between text-xs text-slate-600">
-                <span>
-                  Tài liệu gốc: Đề ôn thi Giữa học kì 1 - Toán 10 - Trường THPT Số 1 Trần Phú
-                </span>
-                <a
-                  href={`${import.meta.env.BASE_URL}assets/aistudio/TOAN_10_DE_ON_TAP_GIUA_KY_1_ca92aabe.pdf`}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="font-semibold text-sky-700 hover:underline"
-                >
-                  Mở PDF trong tab mới
-                </a>
-              </div>
-              <iframe
-                src={`${import.meta.env.BASE_URL}assets/aistudio/TOAN_10_DE_ON_TAP_GIUA_KY_1_ca92aabe.pdf`}
-                title="Đề gốc ôn thi giữa học kì 1 môn Toán 10"
-                className="w-full flex-1 border border-slate-200 rounded-lg bg-slate-100"
-              />
+              {(() => {
+                const pdfUrl =
+                  typeof window !== 'undefined' &&
+                  window.location.hostname.endsWith('github.io')
+                    ? './public/assets/aistudio/TOAN_10_DE_ON_TAP_GIUA_KY_1_ca92aabe.pdf'
+                    : `${import.meta.env.BASE_URL}assets/aistudio/TOAN_10_DE_ON_TAP_GIUA_KY_1_ca92aabe.pdf`;
+                return (
+                  <>
+                    <div className="flex items-center justify-between text-xs text-slate-600">
+                      <span>
+                        Tài liệu gốc: Đề ôn thi Giữa học kì 1 - Toán 10 - Trường THPT Số 1 Trần Phú
+                      </span>
+                      <a
+                        href={pdfUrl}
+                        target="_blank"
+                        rel="noreferrer"
+                        className="font-semibold text-sky-700 hover:underline"
+                      >
+                        Mở PDF trong tab mới
+                      </a>
+                    </div>
+                    <iframe
+                      src={pdfUrl}
+                      title="Đề gốc ôn thi giữa học kì 1 môn Toán 10"
+                      className="w-full flex-1 border border-slate-200 rounded-lg bg-slate-100"
+                    />
+                  </>
+                );
+              })()}
             </div>
           )}
         </div>
