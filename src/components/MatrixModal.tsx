@@ -161,7 +161,7 @@ export const MatrixModal: React.FC<MatrixModalProps> = ({
                   Tài liệu gốc: Đề ôn thi Giữa học kì 1 - Toán 10 - Trường THPT Số 1 Trần Phú
                 </span>
                 <a
-                  href="/assets/aistudio/TOAN_10_DE_ON_TAP_GIUA_KY_1_ca92aabe.pdf"
+                  href={`${import.meta.env.BASE_URL}assets/aistudio/TOAN_10_DE_ON_TAP_GIUA_KY_1_ca92aabe.pdf`}
                   target="_blank"
                   rel="noreferrer"
                   className="font-semibold text-sky-700 hover:underline"
@@ -170,7 +170,7 @@ export const MatrixModal: React.FC<MatrixModalProps> = ({
                 </a>
               </div>
               <iframe
-                src="/assets/aistudio/TOAN_10_DE_ON_TAP_GIUA_KY_1_ca92aabe.pdf"
+                src={`${import.meta.env.BASE_URL}assets/aistudio/TOAN_10_DE_ON_TAP_GIUA_KY_1_ca92aabe.pdf`}
                 title="Đề gốc ôn thi giữa học kì 1 môn Toán 10"
                 className="w-full flex-1 border border-slate-200 rounded-lg bg-slate-100"
               />
